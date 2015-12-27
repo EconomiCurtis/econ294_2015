@@ -1,0 +1,67 @@
+---
+title: "Econ 294 Assignment 1"
+author: "Curtis Kephart"
+date: "Winter 2015"
+output: html_document
+---
+
+Have a look at the last question before you start. It will 
+
+
+1. Load Data and verify it was loaded correctly. 
+  + From CSV
+  + From Tab deliniated
+  + .xls Excel file
+  + From RData
+
+length, dim, nrow, ncol, summary stats functions. 
+
+2. c function.
+
+summary stats with NA and NULL values. 
+
+3. Matrix operations. 
+
+Create the following matrix and call it `x`. 
+
+$$\begin{array}
+{rrr}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{array}
+$$
+
+Show how to find it's transpose. 
+
+Find the eigenvalues and eigenvectors of `x`. 
+
+Now create the following matrix and call it `y`.
+
+$$\begin{array}
+{rrr}
+1 & 2 & 3 \\
+3 & 2 & 1 \\
+2 & 3 & 0
+\end{array}
+$$
+
+Find the inverse of `y`. 
+
+Multiple `y` by its inverse. What is this new matrix called? 
+
+4. Create a data frame.
+
+carat | cut         | clarity | price
+----- | ------      | ------- | -----
+5     | "fair"      | "SI1"   | 850
+2     | "good"      | "I1"    | 450
+0.5   | "very good" | "VI1"   | 450
+1.5   | "good"      | "VS1"   | NULL
+5     | "fair"      | "IF"    | 750
+NA    | "Ideal"     | "VVS2"  | 980
+3     | "fair"      | "SI1"   | 420
+
+
+
+
