@@ -1,0 +1,111 @@
+---
+title: "Econ 294: Applied Economics and Finance Laboratory - R Focus"
+author: "Curtis Kephart"
+date: "Winter 2015"
+output: html_document
+---
+
+
+## Instructor
+
+Curtis Kephart
+
+Email: curtisk@usc.edu
+
+Website: www.cazaar.com/ta
+
+Office: Engineering 2, Room 405G
+
+Office Hours: Thursdays 3:00 - 5:00 PM
+
+
+### Lab Sessions
+
+There are two lab sessions each week. 
+
+- 9:00 - 10:30 AM at the Ming Ong Computer Lab, 103
+- 1:30 -  3:00 PM at the Ming Ong Computer Lab, 103
+
+
+
+### Exam 
+
+The Final exam will be take-home. Details to be announced. 
+
+### Course Description 
+
+The main objective of this course is to give you data management and programming
+skills that will become handy in the masters program and in your professional life. This
+course is partly intended to complement the material covered in ECON 216 and 217
+(Applied Econometric Analysis 1 and 2) as well as other courses in the applied economics and finance masters program.
+
+### Course Outline
+
+We have ten sessions scheduled. The first three-to-four will focus on basic data management, programming, and analysis in R. The remaining classes will deal with more advanced topics including advanced graphics (grammar of graphics, ggplot and ggvis), data manipulation (tidyr, plyr, dplyr), good coding style (style guides, also version control, git, and github), database querying (dealing with SQL), creating R packages, and other topics. 
+
+### Course Materials Textbooks and Other Resources 
+
+There are no textbooks required for the course. 
+R is an open-source statistical programming language with decades of development by a large number of very good applied satiations.
+
+There are numerous online resources including packages/libraries, help files, topic tutorials, cheatsheets, question and answer forums just an internet search away. 
+
+
+#### Getting started with R
+
+If you have never touched R or a programming language (other than STATA mpw), I encourage you to get started wtih the "Try R" tutorials at (tryr.codeschool.com)[tryr.codeschool.com]. 
+
+Also Coursera and YouTube have excellent multipart classes on R. 
+
+
+#### Textbooks
+
+Although no textbooks are required, I have found the following textbooks an excellent resource: 
+
+- **The Art of R Programming** by Norman Matloff, No Scratch Press
+- **Hands-On Programming with R** by Garrett Grolemund, O'Reilly
+- **Use R! A Beginner’s Guide to R** by Alain Zuur, Elena Ieno, and Erik Meesters, Springer
+- **Use R! GGPLOT2** by Hadley Wickham, Springer
+- **R Graphics Cookbook** by Winston Chang, O'Reilly
+- **Time Series Analysis and Its Applications With R Examples** by Robert H. Shumway, David S. Stoffer, Springer
+- **Use R! Introductory Time Series with R** by Andrew V. Metcalfe, Paul S.P. Cowpertwait Springer
+- **R Packages** by Hadley Wickham, O'Reilly
+
+#### Other Online Resources
+
+Besides your instructor, other students, and internet search, there are a number of R user forums you may take advantage of for your more idiosyncratic or difficult issues. 
+
+[Stackoverflow](http://stackoverflow.com/questions/tagged/r) has a large and responsive community that have been answering questions about R and its packages for many years. If you have a question related to R, very likely someone just like you has asked it recently, and had it answered by a number of very knowledgeable  & nice people. 
+
+The R-project also has a number of mailing lists where you can to help with using R. You will likely benefit from the ["*R-Help*" mailing list](https://stat.ethz.ch/mailman/listinfo/r-help). Once signed up, you can email questions to others on the list. https://stat.ethz.ch/mailman/listinfo/r-help
+
+
+### Grades
+
+- 70% Assignments
+- 30% Final 
+
+
+### Assignments
+
+There will be approximately eight assignments. 
+
+### Academic Integrity
+
+All work submitted for this class must be your own. Collaboration on assignments is
+highly encouraged, but the answers you submit must be in your own words and based on
+your own understanding. Copying answers or computer code is a violation of university
+policy. For more information on academic integrity at UC Santa Cruz, please see the
+following link:
+
+[www.ue.ucsc.edu/academic_misconduct](https://www.ue.ucsc.edu/academic_misconduct).
+
+
+
+
+
+
+
+
+
+
