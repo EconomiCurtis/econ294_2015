@@ -1,5 +1,5 @@
 ---
-output: html_document
+output: pdf_document
 ---
 # Econ294 2015 Notes and Code
 
@@ -23,4 +23,4 @@ Course materials for R-Lab (Winter 2015 Econ 294 - Applied Economics Lab, R focu
 
 ## Assignments 
 
-* Due Jan 15 2015 - [Getting Started](/Assignments/Econ_294_Assignment_1.pdf)
+* Due Jan 15 2015 - [Getting Started](/Assignments/Econ 294 Assignment 1.html)
