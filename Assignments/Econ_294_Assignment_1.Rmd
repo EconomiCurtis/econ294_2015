@@ -5,13 +5,24 @@ date: "Winter 2015"
 output: pdf_document
 ---
 
-Have a look at the last question before you start. It will 
+Have a look at the last question before you start.
 
 
 1. Load Data and verify it was loaded correctly. 
-  + From CSV
-  + From Tab deliniated
-  + .xls Excel file
+  + From .dta (STATA File). Assign the name `df` to the file. 
+  
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
+  
+  + From CSV. Assign the name df.csv to the file. 
+
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_CSV.csv`
+
+  + From Tab deliniated. Assign the name df.td to the file. 
+  
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt`
+
+  + From .RData. Assign the name df.rdata to the file. 
+
   + From RData
 
 length, dim, nrow, ncol, summary stats functions. 
