@@ -5,14 +5,14 @@ date: "Winter 2015"
 output: pdf_document
 ---
 
-Have a look at the last question before you start.
+Put solutions in a `.R` script file. Name the file by concatinating your first and last name, plus "Assignment1". (e.g. my file would be called `CurtisKephartAssignment1.R`)
 
 
-1. Load Data and verify it was loaded correctly. 
-<<<<<<< HEAD
-  + From .dta (STATA File). Assign the name `df` to the file. 
+1. Load Data and verify it was loaded correctly. (Hints, you will need different function calls for each file type, and the .dta file requires the `foreign` package.)
+
+  + From .dta (STATA File). Assign the name `df.dta` to the file. 
   
-`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_dta.dta`
   
   + From CSV. Assign the name df.csv to the file. 
 
@@ -23,21 +23,12 @@ Have a look at the last question before you start.
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt`
 
   + From .RData. Assign the name df.rdata to the file. 
-
-=======
-  + From .dta (STATA File)
   
-`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
-  
-  + From CSV
+  `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_RData.RData`
 
+2. Download each file to your hard drive, how big (in KB) is each file? Which is the smallest? 
 
-  + From Tab deliniated
-
-
-  + .xls Excel file
->>>>>>> d1317a0774ffb9070506ba25e9eae496b399e589
-  + From RData
+3. For the object `df.rdata`, what type of data structure is this?
 
 length, dim, nrow, ncol, summary stats functions. 
 
