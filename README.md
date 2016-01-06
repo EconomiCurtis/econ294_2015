@@ -1,6 +1,3 @@
----
-output: html_document
----
 # Econ294 2015 Notes and Code
 
 

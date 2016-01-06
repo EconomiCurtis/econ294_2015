@@ -5,12 +5,20 @@ date: "Winter 2015"
 output: pdf_document
 ---
 
-Have a look at the last question before you start. It will 
+Have a look at the last question before you start.
 
 
 1. Load Data and verify it was loaded correctly. 
+  + From .dta (STATA File)
+  
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
+  
   + From CSV
+
+
   + From Tab deliniated
+
+
   + .xls Excel file
   + From RData
 
