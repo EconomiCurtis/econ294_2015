@@ -5,10 +5,17 @@ date: "Winter 2015"
 output: pdf_document
 ---
 
-Put solutions in a `.R` script file. Name the file by concatinating your first and last name, plus "Assignment1". (e.g. my file would be called `CurtisKephartAssignment1.R`)
+Use R to answer the following answers. 
 
+Put solutions in an `.R` script file. Name the file by concatinating your first and last name, plus "Assignment1". (e.g. my file would be called `CurtisKephartAssignment1.R`)
 
-1. Load Data and verify it was loaded correctly. (Hints, you will need different function calls for each file type, and the .dta file requires the `foreign` package.)
+For all questions below that require some specific answer, use a `print` (or `paste` and `print`) function call in your `.R` script to report your answers. 
+
+Due date: Jan. 15 2016
+
+0. Use a `print` call to report your first and last name, and student ID number. 
+
+1. Load Data. Hints, you will need different function calls for each file type, and the .dta file requires the `foreign` package. Depending on your OS, you may need to make use of the `url()` function.
 
   + From .dta (STATA File). Assign the name `df.dta` to the file. 
   
@@ -22,21 +29,34 @@ Put solutions in a `.R` script file. Name the file by concatinating your first a
   
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt`
 
-  + From .RData. Assign the name df.rdata to the file. 
+  + From .RData. Note that .RData files come with names already assigned to their data structures. What is the name assigned to this RData file?
   
   `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_RData.RData`
 
-2. Download each file to your hard drive, how big (in KB) is each file? Which is the smallest? 
+
+2. Download each file above to your hard drive, how big (in KB) is each file? Which is the smallest? Besides the .dta file, what accounts for their variability? 
 
 3. For the object `df.rdata`, what type of data structure is this?
 
-length, dim, nrow, ncol, summary stats functions. 
+Apply and report `length`, `dim`, `nrow`, `ncol`, and `summary` functions. 
 
-2. c function.
+4. Load `org_example.dta` Stata file from the URL below, and assign the name `df` to the loaded object. 
 
-summary stats with NA and NULL values. 
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
 
-3. Matrix operations. 
+Apply and report `str`. How many observations and how many variables are there? 
+
+For the variable (column) `rw` what is the `min`, `mean`, `median`, `max`, first and third quartile value? How many `NA`s are there? 
+
+
+5. Create the following vector, `v <- c(1,2,3,4,5,6,7,4,NULL,NA)`
+
+Report `length`. Why don't the number of values in the vector match the number reported in `length`?
+
+Report `mean` ignoring the `NA` value. 
+
+
+6. Matrix operations. 
 
 Create the following matrix and call it `x`. 
 
@@ -48,7 +68,7 @@ $$\begin{array}
 \end{array}
 $$
 
-Show how to find it's transpose. 
+Show how to find its transpose. 
 
 Find the eigenvalues and eigenvectors of `x`. 
 
@@ -64,9 +84,9 @@ $$
 
 Find the inverse of `y`. 
 
-Multiple `y` by its inverse. What is this new matrix called? 
+Multiple `y` by its inverse. From linear algebra, what is this new matrix called? 
 
-4. Create a data frame.
+7. Create a data frame based on the follow schema and values, called `diamonds`. 
 
 carat | cut         | clarity | price
 ----- | ------      | ------- | -----
@@ -76,7 +96,12 @@ carat | cut         | clarity | price
 1.5   | "good"      | "VS1"   | NULL
 5     | "fair"      | "IF"    | 750
 NA    | "Ideal"     | "VVS2"  | 980
-3     | "fair"      | "SI1"   | 420
+3     | "fair"      | NA      | 420
+
+* What is the mean price? 
+* What is the mean price of cut "fair"?
+* What is the mean price of cut "good", "very good", and "Ideal"? 
+* For diamonds with greater than 2 carats, and cut "Ideal" or "very good", what is the median price? 
 
 
 
