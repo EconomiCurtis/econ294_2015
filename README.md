@@ -20,4 +20,4 @@ Course materials for R-Lab (Winter 2015 Econ 294 - Applied Economics Lab, R focu
 
 ## Assignments 
 
-* Due Jan 15 2015 - [Getting Started](/Assignments/Econ 294 Assignment 1.Rmd)
+* Due Jan 15 2015 - [Getting Started](/Assignments/Econ 294 Assignment 1.html)
