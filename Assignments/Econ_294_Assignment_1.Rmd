@@ -11,6 +11,8 @@ Put solutions in an `.R` script file. Name the file by concatinating your first 
 
 For all questions below that require some specific answer, use a `print` (or `paste` and `print`) function call in your `.R` script to report your answers. 
 
+Comment your `.R` script 
+
 Due date: Jan. 15 2016
 
 0. Use a `print` call to report your first and last name, and student ID number. 
@@ -21,20 +23,20 @@ Due date: Jan. 15 2016
   
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_dta.dta`
   
-  + From CSV. Assign the name df.csv to the file. 
+  + From CSV. Assign the name `df.csv` to the file. 
 
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_CSV.csv`
 
-  + From Tab deliniated. Assign the name df.td to the file. 
+  + From Tab deliniated. Assign the name `df.td` to the file. 
   
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt`
 
-  + From .RData. Note that .RData files come with names already assigned to their data structures. What is the name assigned to this RData file?
+  + From .RData. Note that `.RData` files come with names already assigned to their data structures. What is the name assigned to this RData file?
   
   `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_RData.RData`
 
 
-2. Download each file above to your hard drive, how big (in KB) is each file? Which is the smallest? Besides the .dta file, what accounts for their variability? 
+2. Download each file above to your hard drive, how big (in `KB`) is each file? Which is the smallest? Besides the .dta file, what accounts for their variability? 
 
 3. For the object `df.rdata`, what type of data structure is this?
 
