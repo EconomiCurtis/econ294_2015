@@ -9,6 +9,7 @@ Have a look at the last question before you start.
 
 
 1. Load Data and verify it was loaded correctly. 
+<<<<<<< HEAD
   + From .dta (STATA File). Assign the name `df` to the file. 
   
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
@@ -23,6 +24,19 @@ Have a look at the last question before you start.
 
   + From .RData. Assign the name df.rdata to the file. 
 
+=======
+  + From .dta (STATA File)
+  
+`https://github.com/EconomiCurtis/econ294_2015/raw/master/data/org_example.dta`
+  
+  + From CSV
+
+
+  + From Tab deliniated
+
+
+  + .xls Excel file
+>>>>>>> d1317a0774ffb9070506ba25e9eae496b399e589
   + From RData
 
 length, dim, nrow, ncol, summary stats functions. 
