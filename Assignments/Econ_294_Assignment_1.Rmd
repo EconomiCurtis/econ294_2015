@@ -7,15 +7,15 @@ output: pdf_document
 
 Use R to answer the following answers. 
 
-Put solutions in an `.R` script file. Name the file by concatinating your first and last name, plus "Assignment1". (e.g. my file would be called `CurtisKephartAssignment1.R`)
+Put solutions in an `.R` script file. Name the file by concatenating your first and last name, plus "Assignment1". (e.g. my file would be called `CurtisKephartAssignment1.R`)
 
 For all questions below that require some specific answer, use a `print` (or `paste` and `print`) function call in your `.R` script to report your answers. 
 
-Comment your `.R` script 
+Comment your `.R` script to make clear which questions each section of code is addressing. 
 
-Due date: Jan. 15 2016
+This assignment is due by Jan. 14 2016. Turn in your assignment by creating a github repo to store your work, and email the instructor (at `curtisk+econ294_01@ucsc.edu`) the URL to your repository and assignment 1 `.R` script file. 
 
-0. Use a `print` call to report your first and last name, and student ID number. 
+0. Use a `print` call to report your first name, last name, and student ID number. 
 
 1. Load Data. Hints, you will need different function calls for each file type, and the .dta file requires the `foreign` package. Depending on your OS, you may need to make use of the `url()` function.
 
@@ -38,7 +38,7 @@ Due date: Jan. 15 2016
 
 2. Download each file above to your hard drive, how big (in `KB`) is each file? Which is the smallest? Besides the .dta file, what accounts for their variability? 
 
-3. For the object `df.rdata`, what type of data structure is this?
+3. For the object `df.rdata`, what `typeof` and `class` of this data structure?
 
 Apply and report `length`, `dim`, `nrow`, `ncol`, and `summary` functions. 
 
@@ -51,9 +51,11 @@ Apply and report `str`. How many observations and how many variables are there?
 For the variable (column) `rw` what is the `min`, `mean`, `median`, `max`, first and third quartile value? How many `NA`s are there? 
 
 
-5. Create the following vector, `v <- c(1,2,3,4,5,6,7,4,NULL,NA)`
+5. Create the a vector named `v` with the following values, $$\{1,2,3,4,5,6,7,4,NULL,NA\}$$
 
 Report `length`. Why don't the number of values in the vector match the number reported in `length`?
+
+Characterize the primative data type the vector `v` contains.
 
 Report `mean` ignoring the `NA` value. 
 

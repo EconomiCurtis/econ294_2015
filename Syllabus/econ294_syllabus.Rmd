@@ -10,7 +10,7 @@ output: html_document
 
 Curtis Kephart
 
-Email: curtisk@usc.edu
+Email: curtisk+econ294@ucsc.edu
 
 Website: www.cazaar.com/ta
 
