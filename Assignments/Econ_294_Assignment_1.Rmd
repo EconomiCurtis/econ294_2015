@@ -36,7 +36,7 @@ This assignment is due by Jan. 14 2016. Turn in your assignment by creating a gi
   `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_RData.RData`
 
 
-2. Download each file above to your hard drive, how big (in `KB`) is each file? Which is the smallest? Besides the .dta file, what accounts for their variability? 
+2. Download each file above to your hard drive, how big (in `KB`) is each file? Which is the smallest? (Feel free to check in a file browser.) Besides the .dta file, what accounts for their variability? 
 
 3. For the object `df.rdata`, what `typeof` and `class` of this data structure?
 
