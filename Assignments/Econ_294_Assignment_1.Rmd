@@ -5,7 +5,7 @@ date: "Winter 2015"
 output: pdf_document
 ---
 
-Use R to answer the following answers. 
+Use R to answer the following questions 
 
 Put solutions in an `.R` script file. Name the file by concatenating your first and last name, plus "Assignment1". (e.g. my file would be called `CurtisKephartAssignment1.R`)
 
