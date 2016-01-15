@@ -31,7 +31,7 @@ This assignment is due by Jan. 14 2016. Turn in your assignment by creating a gi
   
 `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt`
 
-  + From .RData. Note that `.RData` files come with names already assigned to their data structures. What is the name assigned to this RData file?
+  + From .RData. Note that `.RData` files come with names already assigned to their data structures. What is the name assigned to this RData file? (note from instructor, you were supposed to be asked to reassign this name to `df.rdata`)
   
   `https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_RData.RData`
 
