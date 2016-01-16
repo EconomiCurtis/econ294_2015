@@ -132,6 +132,10 @@ x[c(2:4, 7)]   # 2, 3, 4 and 7
 x[-1]          # all but the first index value
 x[-c(4:7)]     #all but the 4th, 5th, 6th and 7th values
 
+##############################################
+# 20160115 - Class One Stopped here
+##############################################
+
 # Logical Vectors
 x <- c(1,2,3,4,5,6,7,8)
   x %% 2 == 0 # which are even? good old modulo

@@ -5,9 +5,13 @@
 # assignment: https://github.com/EconomiCurtis/econ294_2015/blob/master/Assignments/Econ_294_Assignment_1.pdf
 # ---
 
-
-# Here's an example of how to get the assignment started. 
-
+# Grading
+# Out of 10 points
+# On time: 2 points (this will be much more important on next assignments)
+# Script runs, 1 point
+# Point on each question (7 questions). 0.5 points for minor error or incomplete
+# 2 bonus points for having it turned in on git on time. 
+# bonus points tox a few people that helped others out with RStudio+GitHub
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # 0
@@ -47,7 +51,7 @@ df.td <- read.table(
   file = "https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_TSV.txt",
   sep = "\t",
   header = T
-)
+) #few seemed to notice there was a header on this file
 
 load(file = url("https://github.com/EconomiCurtis/econ294_2015/raw/master/data/NHIS_2007_RData.RData"))
 # but what was this object's name?
@@ -221,7 +225,7 @@ print("The identity matrix")
 #other people in this class did this way better than me!
 
 diamonds <- read.table(header = TRUE, text = '
-carat cut clarity price
+                       carat cut clarity price
                        5 "fair" "SI1" 850
                        2 "good" "I1" 450
                        0.5 "very good" "VI1" 450

@@ -102,10 +102,10 @@ carat | cut         | clarity | price
 NA    | "Ideal"     | "VVS2"  | 980
 3     | "fair"      | NA      | 420
 
-* What is the mean price? 
-* What is the mean price of cut "fair"?
-* What is the mean price of cut "good", "very good", and "Ideal"? 
-* For diamonds with greater than 2 carats, and cut "Ideal" or "very good", what is the median price? 
+* What is the mean price? #650, ignore NULLs
+* What is the mean price of cut "fair"? #673.3333333333333
+* What is the mean price of cut "good", "very good", and "Ideal"? #626.6667  
+* For diamonds with greater than 2 carats, and cut "Ideal" or "very good", what is the median price? #NA
 
 
 

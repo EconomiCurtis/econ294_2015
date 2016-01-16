@@ -64,22 +64,22 @@ rep(x = x, times = 2)
 
 rep(a1 = 5, a2 = 10) #misnamed arguments
 rep(5,10) #unnamed arguements, goes by order
-
 rep(1:4,6)
 
 # functions often have many options
 rep(c(1,2,3),each=2) #extra options
-rep_len(x, length.out = 12) #extra options
+rep_len(x, length.out = 13) #extra options
 
 # Sequence Function Example #
 ?seq
-
 seq(from = 0,        # use equal sign to assign argument values
     to = 1, 
     length.out=11)   # seperate multiple arguments by commans
 
 seq(1, 9, by = 2)  # some arguments are unnamed, that's okay if order still works. 
 seq(1, 10, by = 2) # note, ends at or before "to" argument
+seq()
+
 
 # random normal and # random uniform
 # draw a number from a random uniform distribution
@@ -125,7 +125,7 @@ runif(
 #' - next
 
 # if statements
-# if (cond) expr
+# if (cond){expr}
 # returns "expr", if "cond" is TRUE
 if (TRUE) print("The condition was TRUE")   
 if (FALSE){print("The condition was TRUE")} 
@@ -147,7 +147,7 @@ if (x){
 
 # if and else statements
 # else allows you to create an additional option
-x <- 100 <= 10
+x <- 100 >= 10
 if (x){
   print(
     paste(
@@ -166,11 +166,16 @@ if (x){
 
 
 # ifelse() function, very useful for vectorized conditional statements
-x <- 1:10
+x <- data.frame(c1 = 1:10)
 ?ifelse
-ifelse(test = x<5 | x>8, 
-       yes  = x, 
-       no   = 0)
+x$c2 <- ifelse(test = x$c1 < 5 | x$c1 > 8, 
+               yes  = x$c1, 
+               no   = 0)
+x
+x$c2 <- ifelse(x$c1 < 5 | x$c1 > 8, 
+               x$c1, 
+               0)
+x
 
 
 ## for loops - Part 1, Slow explicit loops
@@ -200,10 +205,11 @@ lapply(df, sd)   #find standard deviation of both samples
 
 ## While loops
 # while (cond){expr}
-x <- 0
-while (x < 2){
+x <- 1
+while (x <= 5){
   print(x)
-  x <- rnorm(1, mean = 0, sd = 1)
+  # x <- rnorm(1, mean = 0, sd = 1)
+  x = x + 1 
 }
 print(x)
 # can be quite useful alternative to for loops
@@ -215,12 +221,15 @@ print(x)
 # basically repeats until you get a break!
 # "break" stop a for loop, while loop and repeat
 x <- 0
+bin <- c()
 repeat{
   print(x)
+  bin <- c(bin,x)
   x <- rnorm(1, mean = 0, sd = 1)
   if (x > 2){break}
 }
 print(x)
+bin
 
 # "break" stop a for loop, while loop and repeat
 for (i in 1:10){
