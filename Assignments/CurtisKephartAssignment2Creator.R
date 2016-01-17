@@ -6,10 +6,33 @@
 # ---
 
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# Question 0
+
 CurtisKephartAssignment2 <- list(
   firstName = "Curtis",
   lastName  = "Kephart",
+  email     = "curtisk@ucsc.edu",
   studentID = 0142214
 )
 
-CurtisKephartAssignment2$s1 <- 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# Question 1
+
+# <- get(load(...)) is a handy way to load an .RData file and rename it at the same time
+diamonds <- get(  
+  load(
+    file = url("https://github.com/EconomiCurtis/econ294_2015/raw/master/data/diamonds.RData")
+  )
+)
+
+CurtisKephartAssignment2$s1a <- nrow(diamonds)
+CurtisKephartAssignment2$s1b <- ncol(diamonds)
+CurtisKephartAssignment2$s1c <- names(diamonds)
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+#    save(CurtisKephartAssignment2,
+#         file = "Assignments/CurtisKephartAssignment2.RData")
+
+
