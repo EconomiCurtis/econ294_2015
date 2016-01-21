@@ -20,7 +20,7 @@ CurtisKephartAssignment2 <- list(
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # Question 1
 
-# <- get(load(...)) is a handy way to load an .RData file and rename it at the same time
+# 
 diamonds <- read.csv(  
   file = "https://github.com/EconomiCurtis/econ294_2015/raw/master/data/diamonds.CSV"
 )
