@@ -21,10 +21,8 @@ CurtisKephartAssignment2 <- list(
 # Question 1
 
 # <- get(load(...)) is a handy way to load an .RData file and rename it at the same time
-diamonds <- get(  
-  load(
-    file = url("https://github.com/EconomiCurtis/econ294_2015/raw/master/data/diamonds.RData")
-  )
+diamonds <- read.csv(  
+  file = "https://github.com/EconomiCurtis/econ294_2015/raw/master/data/diamonds.RData"
 )
 
 CurtisKephartAssignment2$s1a <- nrow(diamonds)
