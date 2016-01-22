@@ -21,9 +21,12 @@ CurtisKephartAssignment2 <- list(
 # Question 1
 
 # 
+require(RCurl) ; #install.packages("RCurl")
+diamondsURL <- getURL("https://raw.githubusercontent.com/EconomiCurtis/econ294_2015/master/data/diamonds.CSV")
 diamonds <- read.csv(  
-  file = "https://github.com/EconomiCurtis/econ294_2015/raw/master/data/diamonds.CSV"
+  text = diamondsURL
 )
+rm(diamondsURL)
 
 CurtisKephartAssignment2$s1a <- nrow(diamonds)
 CurtisKephartAssignment2$s1b <- ncol(diamonds)
