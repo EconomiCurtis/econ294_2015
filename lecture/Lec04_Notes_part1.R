@@ -1,14 +1,12 @@
-install.packages("nycflights13")
-install.packages("tidyr")
+#install.packages("nycflights13")
+#install.packages("tidyr")
 install.packages("dplyr")
-library(nycflights13)
-library(tidyr)
+#library(nycflights13)
+#library(tidyr)
 library(dplyr)
 
-
+# mammal sleep dataset
 msleep <- read.csv("data/mammals_sleep.csv")
-  
-  
   
 msleep.doc <- read.delim(text = "
                          column name	Description
@@ -29,12 +27,15 @@ msleep.doc
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 ## Verbs (single table verbs)
 # each verb comes with helper functions
+
 # dplyr-verbs	  Description
 # select()	    select columns
 # filter()	    filter rows
 # arrange()	    re-order or arrange rows
 # mutate()	    create new columns
 # summarise()	  summarise values
+
+# many verbs have helper functions. 
 
 # More syntax
 # group_by()	  allows for group operations in the “split-apply-combine” concept
@@ -46,7 +47,7 @@ msleep.doc
 
 # select just a few columns
 sleepData <- select(msleep, name, sleep_total)
-head(sleepData)
+head(sleepData, 10)
 
 # select a range of columns names
 # ":" colon operator
@@ -74,6 +75,10 @@ head(sleepData)
 #' - num_range("x", 1:5, width = 2): selects all columns/variables (numerically) from x01 to x05.
 #' - one_of("x", "y", "z"): selects variables provided in a character vector.
 #' - everything(): selects all variables. (great for, select "everything else")
+
+# refer to var names by text chat/string with select_()
+sleepdata <- select_(msleep, names(msleep)[1:4]) 
+head(sleepData)
 
 ## rename - handy tool to rename many variable names quickly
 # what's a fast way to rename columns?
@@ -104,8 +109,21 @@ distinct(select(msleep, vore))  # carni, omni, herbi, NA
 ?filter
 ?dplyr::filter
 
-# Note warning
+## Note warning
 # hense, use dplyr::filter instead of just filter
+# > library(dplyr)
+# 
+# Attaching package: ‘dplyr’
+# 
+# The following objects are masked from ‘package:stats’:
+#   
+#   filter, lag
+# 
+# The following objects are masked from ‘package:base’:
+#   
+#   intersect, setdiff, setequal, union
+
+
 filter(msleep, sleep_total >= 16)
 filter(msleep, vore == "carni")
 
@@ -114,6 +132,7 @@ filter(msleep, sleep_total >= 16, bodywt >= 1)
 
 # This is equivalent to the more verbose code in base R:
 msleep[msleep$sleep_total >= 16 & msleep$bodywt >= 1, ]
+#on bigger datasets, filter is very often much faster.
 
 # you can also use "&"
 filter(msleep, sleep_total >= 16 & bodywt >= 1)
@@ -127,6 +146,10 @@ filter(msleep, vore %in% c("carni",  "omni"))
 # OR
 filter(msleep, vore == "carni" | vore == "omni") 
 
+# combine multiple with parentheses 
+filter(msleep, (vore == "omni" & bodywt > 15) | (vore == "carni" & bodywt > 100))
+
+
 
 ## slice
 # To select rows by position, use slice():
@@ -137,14 +160,15 @@ slice(msleep, seq(1,100,by = 8))
 ## pipe operator, intro
 # %>% magrittr "this is not a pipe"
 
+# we've down this already: 
 sleepData <- select(msleep, name, sleep_total)
 head(sleepData)
 
-# alt:
+# alt with nested functions
 head(
   select(msleep, name, sleep_total)
 )
-# nested functions gets messy
+# nested functions gets messy (oft in reverse order)
 # mult assignment gets messy
 
 msleep %>% 
@@ -165,7 +189,8 @@ msleep %>% arrange(order) %>% head(25)
 
 ## arrange with multiple columns
 # If you provide more than one column name, 
-# each additional column will be used to break ties in the values of preceding columns
+# each additional column will be used to break ties in the values of preceding 
+#    columns
 msleep %>% 
   select(name, order, sleep_total) %>%
   arrange(order, sleep_total) %>% 
@@ -318,9 +343,9 @@ msleep %>%
 
 ## Summarize helper functions
 # - n(): the number of observations in the current group
-# - n_distinct(x):the number of unique values in x.
-# - first(x), # - last(x) # - nth(x, n) - 
-#   these work similarly to x[1], x[length(x)], and x[n] 
+# - n_distinct(x): the number of unique values in x.
+# - first(x),  last(x),  nth(x, n) - 
+#                 these work similarly to x[1], x[length(x)], and x[n] 
 
 
 ## your own functions
@@ -334,13 +359,15 @@ msleep %>%
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 ## Pause for review
+
+# select(), filter(), arrange(), mutate(), summarize()
+
 #' You may have noticed that the syntax and function of 
 #' all these verbs are very similar:
 #' - The first argument is a data frame.
 #' - The subsequent arguments describe what to do with the data frame. 
 #' Notice that you can refer to columns in the data frame directly without using $.
 #' - The result is a new data frame
-
 
 # Curtis has stuff to read
 
