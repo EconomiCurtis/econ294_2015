@@ -36,10 +36,14 @@ summary(org_example) #helpful for numeric varaibles
 # summarize one variable
 # The "$" operator from lists
 table(org_example$year) #table is a handy function, freq count
+unique(org_example$year)
 
+class(org_example$educ)
 levels(org_example$educ)
 table(org_example$educ)
-sum(is.na(org_example$educ)) #however, it doesn't count NAs
+sum(
+  is.na(org_example$educ)
+  ) #however, it doesn't count NAs
 
 
 #     View(org_example)  #open a snippet in RStudio
@@ -58,8 +62,9 @@ df <- cbind(
 # create new "colGrad" variable
 # do they have College or Advanced? 
 table(org_example$educ)
+"colGrad" %in% names(org_example)
 org_example$colGrad <- ifelse(
-  (org_example$educ %in% c("College","Advanced")),
+  test = (org_example$educ %in% c("College","Advanced")),
   yes = 1,
   no  = 0
   
@@ -82,6 +87,9 @@ temp.4.mean <- tapply(
 )
 
 temp.4.mean
+typeof(temp.4.mean)
+class(temp.4.mean)
+
 
 
 # applying functions to data.frames
@@ -93,6 +101,8 @@ glm_probit <- glm(
                   nilf == 0 & year == 2008)
 )
 summary(glm_probit)
+
+############ end of lec 3
 
 
 org_example <- read.dta(

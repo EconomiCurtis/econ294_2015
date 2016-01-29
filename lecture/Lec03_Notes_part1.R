@@ -25,7 +25,12 @@ x <- c(1,2,3,NA,5,6)
 x
 x[4] <- 4
 
+x <- c(x,7)
+x <- c(0,x)
 
+
+
+x <- rnorm(100)
 x <- x[1:7] #only keep the first 7 values
 x
 
@@ -48,25 +53,24 @@ x <- c(1,2,3,4,5,6,7,8)
 x <- x[x %% 2 == 0] #only keep even values
 for (i in x){print(i)} #print each value on x
 #can be quite handle
-for (i in 1:length(i)){print(x[i])} #print each value on x
 
 ## Some operations on vectors
 # 1. Some operations change the values inside a vector
 x <- c(1,2,3,4)
 x^2
 x - c(4,3,2,1)
+x - c(1,0)
 
 # 2. Some map all values to another object (e.g mean, median, summary, range, etc)
 x <- rnorm(n = 1000, mean = 0, sd = 1)
 mean(x)              #arithmetic mean
 summary(x)           #summary statistics
 range(x)             #the min and max
-sort(x)              #puts vector in order      
-hist(x, breaks = 20) #creates a histogram plot
 
 # 3. Other functions do something else
+sort(x)              #puts vector in order      
+hist(x, breaks = 50) #creates a histogram plot
 diff(x)
-lag(x)
 
 # 4. too many functions to cover!
 
@@ -148,6 +152,8 @@ x[,2] #2nd column
 x[1,2]
 x[2,2]
 x[c(1,3),-2] #same vector indexing rules, apply over matrix dimensions
+diag(x)
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 ## Arrays
@@ -181,7 +187,7 @@ length(myList)
 names(myList)
 
 # use "=" for component assignment, "<-" won't work
-
+myList
 myList <- list(
   firstName = "Curtis",
   lastName  = "Kephart",
@@ -208,16 +214,20 @@ myList <- list(
   firstName = "Curtis",
   lastName  = "Kephart",
   studentID = 0142214,
-  v1 = rnorm(10)
+  v1 = list(
+    sample1 = rnorm(10),
+    sample2 = runif(100)
+    )
 )
 # use the "$" sign
 myList$firstName
 myList$lastName
 myList$studentID
 myList$v1       # tab completion is handy
+myList$v1$sample1
 
 # extracting values, use double brackets
-myList[[1]]
+myList[[4]]
 myList[["studentID"]]
 
 ## adding list elements
@@ -239,6 +249,7 @@ myList <- list(
   b = rnorm(1000,0,1),
   c = rnorm(1000,-1,3)
 )
+str(myList)
 lapply(myList,summary)
 lapply(myList,sd)
 
@@ -285,15 +296,23 @@ View(df)  #note, the 10 df rows are repeated!
 
 
 # extract values from data frame
+df <- data.frame(
+  col1 = rep(NA,10),
+  col2 = 1:10,
+  col3 = rnorm(10)
+) #df of nrow == 10
+
 # 1. index, just col
 df[1]  #col1
 df[3]
+df['col3']
 
 # 2. row,col
 df[1,3] #row1, col3
-df[,3] #col3 #all row, col3 (note comma!)
-df[1,] #row1, all columns (note comma!)
+df[ ,3] #col3 #all row, col3 (note comma!)
+df[1, ] #row1, all columns (note comma!)
 df[c(2,4,6,8,10),] # even rows (note comma!)
+df[df$col3 < 0,] # 
 df[c("col1","col3")] # extract col by name
 df$col1 #use $ to call column name
 df$col3
