@@ -5,6 +5,11 @@ install.packages("dplyr")
 #library(tidyr)
 library(dplyr)
 
+# From: 
+#' http://genomicsclass.github.io/book/pages/dplyr_tutorial.html
+#' https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+
+
 # mammal sleep dataset
 msleep <- read.csv("data/mammals_sleep.csv")
   
@@ -77,8 +82,8 @@ head(sleepData)
 #' - everything(): selects all variables. (great for, select "everything else")
 
 # refer to var names by text chat/string with select_()
-sleepdata <- select_(msleep, names(msleep)[1:4]) 
-head(sleepData)
+# sleepdata <- select_(msleep, names(msleep)[1:4]) 
+# head(sleepdata)
 
 ## rename - handy tool to rename many variable names quickly
 # what's a fast way to rename columns?
@@ -124,7 +129,7 @@ distinct(select(msleep, vore))  # carni, omni, herbi, NA
 #   intersect, setdiff, setequal, union
 
 
-filter(msleep, sleep_total >= 16)
+dplyr::filter(msleep, sleep_total >= 16)
 filter(msleep, vore == "carni")
 
 # comma for AND
@@ -135,7 +140,6 @@ msleep[msleep$sleep_total >= 16 & msleep$bodywt >= 1, ]
 #on bigger datasets, filter is very often much faster.
 
 # you can also use "&"
-filter(msleep, sleep_total >= 16 & bodywt >= 1)
 filter(msleep, sleep_total >= 16 & bodywt >= 1)
 
 
@@ -301,7 +305,9 @@ stndz <- function(x){
 msleep %>% 
   mutate(
     sleep_stndz = stndz(sleep_total)
-  )
+  ) %>%
+  select(name:order, sleep_total, sleep_stndz)
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 ## Summarize (or summarise, because the british commonwealth)
@@ -403,7 +409,8 @@ msleep %>%
     min_sleep = min(sleep_total), 
     max_sleep = max(sleep_total),
     total = n()
-  )
+  ) %>% 
+  View
 
 # note with group_by + summarize:
 # 1. first two columns will be the "group by" columns
@@ -513,7 +520,7 @@ group_by(msleep,order) %>%
             total = n())
 
 # go with: 
-msleep %>%
+df.nu <- msleep %>%
   group_by(order) %>%               # one line arg
   summarise(
     avg_sleep = mean(sleep_total),  # multiple lines for each arg 
