@@ -58,15 +58,18 @@ NHIS_2007_TSV$weight <- ifelse(
 CurtisKephartAssignment2$s2f <- mean(NHIS_2007_TSV$weight, na.rm = T)
 CurtisKephartAssignment2$s2g <- median(NHIS_2007_TSV$weight, na.rm = T)
 
-
+# for woman (SEX == 2)
 CurtisKephartAssignment2$s2h <- summary(
   subset(NHIS_2007_TSV,
-         SEX == 1)$weight)
+         SEX == 2)$weight)
 
 
 CurtisKephartAssignment2$s2i <- summary(
   subset(NHIS_2007_TSV,
-         SEX == 2)$weight)
+         SEX == 1)$weight)
+# grading: either solution for s2i and s2h will be acceptable. 
+# in fact, SEX == 1 is for men, SEX == 2 for woman, prev solutions has these switched
+# grades will be automatically adjusted. 
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
