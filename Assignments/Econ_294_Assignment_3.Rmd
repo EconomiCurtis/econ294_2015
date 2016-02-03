@@ -14,7 +14,7 @@ and emailing the URL to your instructor (at `curtisk+econ294_03@ucsc.edu`)
 - Comment your code so it's clear which code blocks answer particular questions. 
 - Where a question asks for a specific answer, use `print()` to print the answer to the console
 
-Just to be clear, and to help you get started, here is an example that satisfies the first set of questions, at [`https://github.com/EconomiCurtis/econ294_2015/raw/master/CurtisKephartAssignment3Creator.R`](https://github.com/EconomiCurtis/econ294_2015/blob/master/Assignments/CurtisKephartAssignment3Creator.R):
+Just to be clear, and to help you get started, here is an example that satisfies the first set of questions, at [`Assignments/CurtisKephartAssignment3Creator.R`](https://github.com/EconomiCurtis/econ294_2015/blob/master/Assignments/CurtisKephartAssignment3Creator.R):
 
 This assignment closely follows the [dplyr package vignette](https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html).   
 
