@@ -7,7 +7,8 @@ library(dplyr)
 
 # From: 
 #' http://genomicsclass.github.io/book/pages/dplyr_tutorial.html
-#' https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+#' https://cran.rstudio.com/we
+#' b/packages/dplyr/vignettes/introduction.html
 
 
 # mammal sleep dataset
@@ -44,7 +45,7 @@ msleep.doc
 
 # More syntax
 # group_by()	  allows for group operations in the “split-apply-combine” concept
-#   %>%         magrettr "pipe" operator
+#   %>%         magrettr "pipe" operator / chaining
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 ## Select (also rename + helper functions)
@@ -175,7 +176,7 @@ head(
 # nested functions gets messy (oft in reverse order)
 # mult assignment gets messy
 
-msleep %>% 
+sleepData <- msleep %>% 
   select(name, sleep_total) %>% 
   head
 # very simple, 
@@ -255,7 +256,7 @@ msleep %>%
 msleep %>% 
   mutate(
     rem_proportion = sleep_rem / sleep_total, 
-    bodywt_grams = bodywt * 1000
+    bodywt_grams   = bodywt * 1000
     ) %>%
   select(name:order, sleep_total, sleep_rem, rem_proportion, bodywt, bodywt_grams) %>%
   head(25)
@@ -526,7 +527,7 @@ df.nu <- msleep %>%
     avg_sleep = mean(sleep_total),  # multiple lines for each arg 
     min_sleep = min(sleep_total),   # line up equal signs
     max_sleep = max(sleep_total),
-    total = n()
+    total     = n()
   )
 # ceartes clearly separated blocks
 # indentation clearly links blocks to appropriate functions

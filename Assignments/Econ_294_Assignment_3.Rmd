@@ -58,7 +58,7 @@ Another function called `nrmlz` that takes a vector of numbers, and returns the 
 
 Create a new data frame called `df.ex.5a` with two new columns, one called `rw.stndz` with the standardized score of real wages, and another called `rw_nrmlz` with feature scaled values of real wages. 
 
-Create a new data frame called `df.ex.5b` with three new columns. The three new columns should reflect the standard score (`rw.stndz`), feature scaled value (`rw_nrmlz`), and `count` at year, month groupings. 
+Create a new data frame called `df.ex.5b` with **three new columns**. The three new columns should reflect the standard score (`rw.stndz`), feature scaled value (`rw_nrmlz`), and `count` at year, month groupings. 
 (Tip1, use `group_by()` and `n()`. Tip2 to help you double check your work, In Jan 2013, the `rw` of `57.485714` should have `rw.stndz` of `2.18566760`, `rw_nrmlz` of `0.233088223` and `count` of `13342`.)
 
 6. Summarize 
@@ -72,7 +72,7 @@ Print which year, month, state observation has the highest mean real wage.
 
 7. Challenge - extra credit. 
 
-Create a new data frame called `df.ex.7a` that is sorted with year and month ascending and `state` sorted in descending alphabetical order. (Double check the `state` column. Since it's a factor - `str(df.ex$state)` -  it will now be sorted correctly. Consider your options to convert `state` into a char vector before your arrange call.)
+Create a new data frame called `df.ex.7a` that is sorted with year and month ascending and `state` sorted in descending alphabetical order. (Double check the `state` column. Since it's a factor - `str(df.ex$state)` -  it will not be sorted correctly. Consider your options to convert `state` into a char vector before your arrange call.)
 
 Additional bonus questions may follow. 
 
