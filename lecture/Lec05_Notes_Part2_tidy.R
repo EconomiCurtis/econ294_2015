@@ -59,7 +59,10 @@ tb
 
 
 tb2 <- tb %>%
-  gather(demo, n, -iso2, -year, na.rm = T)
+  gather(demo, n, 
+         ... = -iso2, -year, 
+         na.rm = T) %>%
+  arrange(iso2, year)
 # name key "demo", demographic
 # name value "n", count
 # na.rm = T, removes all missing values. Note, that can be a serious issue in practice
@@ -81,7 +84,7 @@ tb2 <- tb %>%
 tb3 <- tb2 %>%
   separate(
     demo, #column to separate
-    c("sex", "age"), #name of new column(s)
+    c("sex", "age_range"), #name of new column(s)
     1 # read "sep" argument, if numeric: index position to split at.
   )
 tb3
@@ -89,7 +92,7 @@ tb3
 # general tidying to make easier to read
 tb3 <- tb3 %>%
   rename(country = iso2) %>%
-  arrange(country, year, sex, age)
+  arrange(country, year, sex, age_range)
 tb3
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -134,14 +137,14 @@ tb3
 tb3 %>%
   unite(
     col = demo, 
-    ... = sex, age,
-    sep = "_"
+    ... = sex, age_range,
+    sep = ""
   )
 
 tb3 %>%
   unite(
     col = demo, 
-    ... = sex, age,
+    ... = sex, age_range,
     sep = "---"
   )
 

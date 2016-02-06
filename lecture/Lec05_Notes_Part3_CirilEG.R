@@ -1,6 +1,6 @@
 library(dplyr)
 
-data <- read.delim("C:/Users/OKComputer/Downloads/Data.tex")
+df <- read.delim("C:/Users/OKComputer/Downloads/Data.tex")
 # data, see data.tex from Ciril
 
 # From Ciril:
@@ -34,9 +34,9 @@ distinct(select(data,sender)) # 112 unique subjects
 
 # hide: 
 {
-data.boots <- data %>%
+data.boots <- df %>%
   group_by(sender) %>%
-  sample_n(500, replace = T) %>%
+  sample_n(2, replace = T) %>%
   ungroup() %>% #to make str() easier to read
   tbl_df() # still a data.frame, but nicer to work with
 
@@ -50,12 +50,10 @@ str(data.boots)
 
 {
 
-data.s <- split(data, data$sender) %>% sample(
-  150,
-  replace = T
-) %>%
+data.s <- split(df, df$sender) %>% 
+  sample(112,replace = T) %>%
   bind_rows()
-
+data.s
 
 }
 

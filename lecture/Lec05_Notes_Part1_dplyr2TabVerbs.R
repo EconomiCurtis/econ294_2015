@@ -6,6 +6,7 @@
 
 library(dplyr)
 
+
 library("nycflights13") # some data
 # go to Envirnment Tab >> "Global Environment" >> package:nyxflights13
 
@@ -61,7 +62,7 @@ flights2 %>%
             by = c("origin" = "faa"))
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# THREE FAMILIES OF JoiNS
+# THREE FAMILIES OF Two-table verbs
 # - Mutating joins, which add new variables to one table from matching rows in another.
 # - Filtering joins, which filter observations from one table based on whether or not they match an observation in the other table.
 # - Set operations, which combine the observations in the data sets as if they were set elements.
@@ -178,8 +179,8 @@ bind_rows(df1, df2)
 # what if cols don't match?
 bind_rows(
   data.frame(
-    x1 = 1:3,
-    x2 = LETTERS[1:3]
+    x2 = LETTERS[1:3],
+    x1 = 1:3
   ),
   data.frame(
     x1 = 5:7,
