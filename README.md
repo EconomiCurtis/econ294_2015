@@ -25,7 +25,7 @@ Advanced topics will include working with relational databases (MySQL), package 
 ## Assignments 
 
 * Assignment 1 - Due Jan 14 2015 - [Getting Started PDF](/Assignments/Econ_294_Assignment_1.pdf)<br>
-[Example assignment starter](/Assignments/CurtisKephartAssignment.R) - 
+[Example assignment starter](/Assignments/CurtisKephartAssignment1.R) - 
 [Solutions](/Assignments/CurtisKephartAssignment1_Sol.R)
 * Assignment 2 - Due by Jan. 22 2016 - [Getting Started PDF](/Assignments/Econ_294_Assignment_2.pdf)<br>
 [Example assignment starter](/Assignments/CurtisKephartAssignment2Creator.R) - 
