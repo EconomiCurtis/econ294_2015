@@ -7,7 +7,7 @@ Course materials for R-Lab (Winter 2015 Econ 294 - Applied Economics Lab, R focu
 
 ## Lectures
 
-See the `lecture` director for notes.  
+See the [lecture](/lecture/) director for notes.  
 
 * Jan 8 2015 - Intro, R Environment, RStudio, interactive programming, data structures.
 * Jan 15 2015 - Continued...
@@ -25,13 +25,11 @@ Advanced topics will include working with relational databases (MySQL), package 
 ## Assignments 
 
 * Assignment 1 - Due Jan 14 2015 - [Getting Started PDF](/Assignments/Econ_294_Assignment_1.pdf)<br>
-[Example assignment starter](/Assignments/CurtisKephartAssignment.R)<br>
+[Example assignment starter](/Assignments/CurtisKephartAssignment.R) - 
 [Solutions](/Assignments/CurtisKephartAssignment1_Sol.R)
 * Assignment 2 - Due by Jan. 22 2016 - [Getting Started PDF](/Assignments/Econ_294_Assignment_2.pdf)<br>
-[Example assignment starter](/Assignments/CurtisKephartAssignment3Ceator.R)<br>
+[Example assignment starter](/Assignments/CurtisKephartAssignment2Creator.R) - 
 [Solutions](/Assignments/CurtisKephartAssignment2_Sol.R)
 * Assignment 3 - Due by Feb 5th 2016 - [Getting Started PDF](/Assignments/Econ_294_Assignment_3.pdf)<br>
-[Example assignment starter](/Assignments/CurtisKephartAssignment3Ceator.R)<br>
-[Solutions](/Assignments/CurtisKephartAssignment3_Sol.R)
-* Assignment 4 - Due by Feb 19th 2016 - [Getting Started PDF](/Assignments/Econ_294_Assignment_4.pdf)<br>
-[Solutions](/Assignments/CurtisKephartAssignment4_Sol.R)
+[Example assignment starter](/Assignments/CurtisKephartAssignment3Creator.R) - [Solutions](/Assignments/CurtisKephartAssignment3_Sol.R)
+* Assignment 4 - Due by Feb 19th 2016 - [Getting Started PDF](/Assignments/Econ_294_Assignment_4.pdf) - [Solutions](/Assignments/CurtisKephartAssignment4_Sol.R)
