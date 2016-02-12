@@ -8,7 +8,7 @@
 
 # R is a Block structure language:   
 # A "single statement" is a single line, or grouped by curly braces
-1 + 1
+1 + 1 
 1 + 2
 #, note, use a new line to separate single statments
 #RUN:          1 + 1 1 + 2  # nope, error
@@ -187,7 +187,7 @@ oddcount.noReturn <- function(x) {
 }
 system.time({
   oddcount.noReturn(1:5000000)
-}) #aboot 14.9s
+}) #aboot 6.24s
 
 # "oddcount.return" will tend to runa bit slower
 # this can add up,
@@ -205,6 +205,8 @@ oddcount <- function(x = 1:10) {
   }
   return(k)
 }
+typeof(oddcount)
+class(oddcount)
 
 # what's in your function? 
 formals(oddcount)
