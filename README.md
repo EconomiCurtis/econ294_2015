@@ -5,6 +5,9 @@ Course materials for R-Lab (Winter 2015 Econ 294 - Applied Economics Lab, R focu
 
 [Course Syllabus](/Syllabus/econ294_syllabus.Rmd)
 
+**Note** No office hours March 3. 
+
+
 ## Lectures
 
 See the [lecture](/lecture/) director for notes.  
