@@ -1,13 +1,13 @@
-# Lecture 3
+# Lecture 6
 # Functional programming
-# working with function
+# working with functions
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # Recap - 
 
 
 # R is a Block structure language:   
-# A "single statement"
+# A "single statement" is a single line, or grouped by curly braces
 1 + 1
 1 + 2
 #, note, use a new line to separate single statments
@@ -16,6 +16,7 @@
 
 # Use a semi-colon to separate multiple (but distinct) statments
 1 + 1 ; 1 + 2
+# or use multiple lines
 
 # A "block" 
 # 	- a block of code is a group of statements
@@ -28,6 +29,7 @@
 {
   1 + 1 ; 1 + 2
 }
+
 
 # Control Structures
 for (i in 1:10){
@@ -46,6 +48,7 @@ for(FILE in list.files("data")){
   print(FILE)
 } #on my computer, this reads out everything in the folder "data"
 
+
 # Loopoing over non-vectors
 # - note that in the loops above, we could over iterate over a vector
 # apply family of functions
@@ -57,6 +60,7 @@ apply(
   2,
   FUN = summary
 ) #applies "summary" function to each object
+
 
 # get() 
 # - how do we loop over object names?
@@ -73,14 +77,6 @@ for (v in c("x","y")){ #note, objects by character name
   print(mean(v.2))
 } # yes
 
-# recall load() function
-NHIS_2007 <- load(file = "data/NHIS_2007_RData.RData")
-NHIS_2007 #just the name
-rm(x,y,NHIS_2007,NHIS_2007_RData)
-NHIS_2007 <- get(
-  load(file = "data/NHIS_2007_RData.RData")
-)
-# NOTE, both files open. 
 
 
 
@@ -122,6 +118,18 @@ mean(
   rep(c(1,2,3,4),
       c(10,1,1,10))
 )
+
+
+# "..." What does that do?
+stndz <- function(x, ...){
+  (x - mean(x, ...)) / (sd(x, ...))
+}
+
+stndz(1:10)
+
+stndz(c(1:10, NA))
+
+stndz(c(1:10, NA), na.rm = T)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -167,7 +175,7 @@ oddcount.return <- function(x) {
 }
 system.time({
   oddcount.return(1:5000000)
-})
+}) # aboot 9.25s
 
 oddcount.noReturn <- function(x) {
   # count the number of odd numbers in a vector
@@ -179,7 +187,7 @@ oddcount.noReturn <- function(x) {
 }
 system.time({
   oddcount.noReturn(1:5000000)
-})
+}) #aboot 14.9s
 
 # "oddcount.return" will tend to runa bit slower
 # this can add up,
@@ -205,8 +213,11 @@ View(oddcount) # in R
 oddcount
 page(oddcount) # edit the function - be careful
 
+
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # Function Environment and Scope
+
 rm(list = ls()) #just clearing workspace
 x <- 10                  # x global
 f <- function(y) {       # f() global, y is local to f(), and global to h()
@@ -314,15 +325,6 @@ x.sum$median
 x.sum$length
 
   
-  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-# higher order functions
-# apply, a family of functions
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-
-# sapply - simple
-
-# lapply - on lists
-
-
-# 
