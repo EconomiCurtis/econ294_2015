@@ -79,7 +79,7 @@ p <- ggplot(
 ) + 
   geom_histogram()
 p
-# geom: point
+# geom: bar
 # stat: bin
 # scales: linear
 # coordinate system: Cartesian
@@ -87,9 +87,10 @@ p
 
 p <- ggplot(
   data = mpg, 
-  aes(x = displ, y = hwy)
+  aes(x = displ, 
+      y = hwy)
 )
-p <- p + geom_point()
+p <- p + geom_point(aes(color = class))
 p
 # geom: point
 # stat: identity
@@ -138,9 +139,10 @@ ggplot(data = mpg,
 d <- ggplot(diamonds,
             aes(x=carat, y=price))
 d + geom_point()
-d + geom_point(aes(colour = carat))
+d + geom_point(aes(colour = clarity))
 d + geom_point(aes(colour = carat))
 + scale_colour_brewer()
+
 ggplot(diamonds) +
   geom_histogram(aes(x=price))
   
@@ -202,7 +204,7 @@ p + geom_histogram(aes(y = ..density..))
 
 p <- ggplot(diamonds, aes(x=price))
 p + geom_histogram()
-p + geom_histogram(aes(colour = ..count..))
+p + geom_histogram(aes(fill = ..count..))
 p + geom_histogram(aes(y = ..density..))  #i love this one
 p + geom_histogram(aes(y = ..ncount..))
 p + geom_histogram(aes(y = ..ndensity..))
@@ -244,7 +246,7 @@ p + geom_point()
 
 # add a line: 
 ggplot(mpg, aes(displ, hwy))+
-  geom_point()+
+  geom_point() +
   geom_line()
 # what's going on?
 View(mpg)
@@ -344,7 +346,8 @@ ggplot(
   aes(
     x = date, 
     y = rw,
-    group = interaction(educ, sex)
+    group =  interaction(sex, educ),
+    colour = interaction(sex, educ)
   )
 ) +
   stat_smooth(span = 3)
@@ -352,7 +355,24 @@ ggplot(
 # Time Series Scales =========================================================
 library(scales)
 
-scale_x_date(labels = date_format("%b-%Y"), 
-             #            limits = as.Date(c(as.Date("2011-3-01"),as.Date("2013-12-31"))), 
-             breaks = "6 month", 
-             minor_breaks = "1 month")
+ggplot(
+  data = (
+    org_example %>%
+      mutate(
+        sex = as.factor(ifelse(female, "Female", "Male"))
+      )
+  ),
+  aes(
+    x = date, 
+    y = rw,
+    group = interaction(educ, sex),
+    colour = interaction(educ, sex)
+  )
+) +
+  stat_smooth(span = 3) 
+
+
++
+  scale_x_date(labels = date_format("%b-%Y"), 
+               breaks = "6 month", 
+               minor_breaks = "1 month")
