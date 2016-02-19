@@ -149,7 +149,27 @@ ggplot(diamonds) +
 #' 'd' in this case is data + mapping. 
 #' and we then explore over different views
 #' aes defines relationships, not data. 
-#' 
+
+# Factors ######################################################################
+
+ggplot(diamonds,
+       aes(x=cut, y=price)) +
+  geom_boxplot()
+# note the order in which the different cuts appear
+# it matches cut's factor levels
+levels(diamonds$cut)
+
+
+{
+  #reverse those levels: 
+  levels(diamonds$cut) <- rev(levels(diamonds$cut))
+  ggplot(diamonds,
+         aes(x=cut, y=price)) +
+  geom_boxplot()
+  
+  levels(diamonds$cut) <- rev(levels(diamonds$cut))
+}
+
 
 # Geoms ########################################################################
 #' geommetric shape of the elements of the plot
@@ -161,6 +181,7 @@ ggplot(diamonds) +
 
 # Statistics ########################################################################
 # The values represented in the plot are the product of various statistics. 
+# for example: 
 # - point: identity statistic
 # - bar: mean, or median statistic
 # - histogram: binned count, or density statistic
@@ -197,13 +218,15 @@ ggplot(diamonds, aes(x=price)) + stat_bin(binwidth = 100)
 # + stat_summary(fun="mean_cl_boot")     see docs, Mean Standard error from bootstrap
 # + geom_boxplot(outlier.colour = "red")    
 
+# each geom and stat may have a variety of params, see docs
 
-
+# ASTHETICS AS PARAMS
 # Any aesthetic can also be used as a parameter
 # + geom_point(colour = "red", size = 5)
 # + geom_line(linetype = 3)
 p + stat_bin(colour = "red")
 p + stat_bin(colour = "red", fill = "blue")
+p + stat_bin(alpha = 0.5) #alpha refers to transparency
 
 # Setting vs Mapping ###########################################################
 # Tricky to get this right, play around, see docs
@@ -214,8 +237,6 @@ p + geom_point()
 p + geom_point(aes(colour = "green"))  # basically a new variable... all green
 p + geom_point(colour = "green")       # make all points here, green
 p + geom_point(colour = colour)        # oops
-
-# GGPLOT2 Details ---------------------------------------------------------
 
 
 # Points and Lines ==================
@@ -328,3 +349,10 @@ ggplot(
 ) +
   stat_smooth(span = 3)
 
+# Time Series Scales =========================================================
+library(scales)
+
+scale_x_date(labels = date_format("%b-%Y"), 
+             #            limits = as.Date(c(as.Date("2011-3-01"),as.Date("2013-12-31"))), 
+             breaks = "6 month", 
+             minor_breaks = "1 month")
