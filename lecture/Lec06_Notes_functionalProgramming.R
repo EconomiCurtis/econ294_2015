@@ -8,8 +8,8 @@
 
 # R is a Block structure language:   
 # A "single statement" is a single line, or grouped by curly braces
-1 + 1 
-1 + 2
+1 + 1
+1 + 2 
 #, note, use a new line to separate single statments
 #RUN:          1 + 1 1 + 2  # nope, error
 
@@ -121,6 +121,12 @@ mean(
 
 
 # "..." What does that do?
+stndz <- function(x){
+  (x - mean(x, na.rm = T)) / (sd(x, na.rm = T))
+}
+
+
+
 stndz <- function(x, ...){
   (x - mean(x, ...)) / (sd(x, ...))
 }
@@ -129,7 +135,7 @@ stndz(1:10)
 
 stndz(c(1:10, NA))
 
-stndz(c(1:10, NA), na.rm = T)
+stndz(c(1:10,NA), na.rm = T)
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -245,7 +251,7 @@ ls.str() #more detailed info
 
 f(100)
 # z * ( x +   y)
-# 8 * (10 + 100)
+# 8 * (10 + 100) = 880
 
 h #note, h doesn't exist any more
 
