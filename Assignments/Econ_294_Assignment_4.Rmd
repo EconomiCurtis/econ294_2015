@@ -41,7 +41,7 @@ and emailing the URL to your instructor (at `curtisk+econ294_04@ucsc.edu`)
 
 > 5a use arrange to find and print the top five most (departure) delayed flights. 
 
-> 5b use arrange to find and print the top five flights that caught up the most (in absolute time) during the flight. (Arrange allows you to use compound expressions, but feel free to use `mutate`.)
+> 5b use arrange to find and print the top five flights that caught up the most (in minutes) during the flight. (Arrange allows you to use compound expressions, but feel free to use `mutate`.)
 
 6. Working with `mutate()`.
 
