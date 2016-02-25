@@ -1,3 +1,4 @@
+
 #' Curtis Kephart
 #' Winter 2016
 #' CurtisKephartAssignment3Creator.R
