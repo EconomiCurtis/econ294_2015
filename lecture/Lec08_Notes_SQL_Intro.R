@@ -74,7 +74,10 @@ tbl(my_db, sql("SELECT * FROM flights"))
 #' "The only paradigm where you "just" declare the nature of the results that you 
 #' would like to get. Not how your computer shall compute those results. 
 #' Isn't that wonderful?"
-tbl(my_db, sql("SELECT year, month, day, tailnum, dep_delay FROM flights where dep_delay > 30"))
+tbl(my_db, 
+    sql("SELECT year, month, day, tailnum, dep_delay 
+        FROM flights 
+        where dep_delay > 30"))
 #' "Easy to understand. 
 #' You don't care where flight records physically come from. 
 #' You just want those that have big departure delays.."
