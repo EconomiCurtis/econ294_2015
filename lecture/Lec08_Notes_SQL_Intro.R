@@ -52,7 +52,7 @@ weather_sqlite <- copy_to(
 #' in a standard location: 
 nycflights13_sqlite()
 my_db
-flights_sqlite <- tbl(nycflights13_sqlite(), "flights")
+flights_sqlite <- tbl(my_db, "flights")
 flights_sqlite
 ?tbl # creates a data frame table from a src query
 
@@ -74,9 +74,9 @@ tbl(my_db, sql("SELECT * FROM flights"))
 #' "The only paradigm where you "just" declare the nature of the results that you 
 #' would like to get. Not how your computer shall compute those results. 
 #' Isn't that wonderful?"
-tbl(my_db, sql("SELECT year, month, day, tailnum FROM flights where dep_delay > 30"))
+tbl(my_db, sql("SELECT year, month, day, tailnum, dep_delay FROM flights where dep_delay > 30"))
 #' "Easy to understand. 
-#' You don't care where flight  records physically come from. 
+#' You don't care where flight records physically come from. 
 #' You just want those that have big departure delays.."
 
 
@@ -164,8 +164,7 @@ flights_planes3 <- inner_join(
   tbl(my_db, "flights"),
   tbl(my_db, "planes"),
   by = "tailnum") %>%
-  collect()  %>% 
-  tbl_df
+  collect() 
 flights_planes3
 # note names
 
