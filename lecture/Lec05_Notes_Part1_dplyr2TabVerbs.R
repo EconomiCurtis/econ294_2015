@@ -5,8 +5,7 @@
 # also bit.ly/wrangling-webinar pg 131
 
 library(dplyr)
-
-
+library(RSQLite)
 library("nycflights13") # some data
 # go to Envirnment Tab >> "Global Environment" >> package:nyxflights13
 
