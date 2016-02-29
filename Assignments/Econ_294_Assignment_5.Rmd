@@ -1,0 +1,136 @@
+---
+title: "Econ 294 Assignment 5"
+author: "Curtis Kephart"
+date: "Winter 2016"
+output: pdf_document
+---
+
+This assignment is designed to get you to explore `ggplot2`.
+ 
+
+Please refer to the ggplot2 documentation website for help. 
+I also found UPENN's ggplot2 intro tutorial from 2010 useful. 
+
+Due by Feb 26th 2016 (after the next lecture). Turn in your `.R` script by pushing it to your public github repo  
+and emailing the URL to your instructor (at `curtisk+econ294_05@ucsc.edu`) 
+
+
+
+```{r, echo = F, message = F, warning= F}
+#load data
+library(ggplot2)
+library(dplyr)
+library(foreign)
+
+org_example <- read.dta("/Users/OKComputer/Dropbox/R Lab/econ294_2015/data/org_example.dta")
+```
+
+
+1. From ggplot2's diamond's dataset, approximately replicate the following plots. 
+
+a. Scatter plot of diamond `prices`, volume (`x * y * z`), with point size `carat`, color `clarity`, and the x-axis and y-axis log  scale (e.g `scale_x_log10`). 
+
+```{r, echo = F, message = F, warning= F, fig.height = 4}
+ggplot(diamonds, 
+       aes(x = x*y*z, y = price, size = carat, group = clarity, fill = clarity, colour = clarity)) +
+  geom_point(alpha = 0.2) +
+  scale_x_log10() +
+  scale_y_log10() +
+  guides(fill = guide_legend(override.aes= list(alpha = 0.9, 
+                                                size = 6))) 
+```
+
+
+\pagebreak
+
+
+
+b. Stacked histogrames showing density of diamonds by carat, stacked by clarity, broken down by cut type. (Check out `geom_histogram`, `facet_grid`, and the use of `..density..` in `geom_histogram`)
+```{r, echo = F, message = F, warning= F, fig.height = 4.5}
+
+	ggplot(diamonds, 
+	       aes(carat, ..density..)) +
+	    geom_histogram(aes(fill = clarity), binwidth = 0.2) +
+	    facet_grid(cut ~ .) +
+		labs(y='Density', x='Carat', fill='Clarity')
+```
+
+
+c. Violin plots of price, by cut. With jittered, very high transparency scatterplots of price. (`geom_violin`, `geom_jitter`, `alpha`. )
+
+```{r, echo = F, message = F, warning= F, fig.height = 3.}
+
+	ggplot(diamonds, 
+	       aes(x = cut, y = price)) +
+  geom_violin() +
+  geom_jitter(alpha = 0.01)
+```
+
+\pagebreak
+
+
+
+3. From the `org_example` dataset, approximately replicate the following plots. 
+
+
+a. Plot monthly median `rw` in a line plot, along with the band for the first and third quartiles, and first and ninth deciles. (There may be many ways to do this, I used dplyr single table verbs, plus `geom_line`, `geom_ribbon`, `alpha` and `ylim`. )
+
+
+```{r, echo = F, message = F, warning= F, fig.height = 2.5}
+
+df <- org_example %>%
+  mutate(
+    date = paste(year, month, "01", sep = "-"),
+    date = as.Date(date, format = "%Y-%m-%d")
+  ) %>%
+  filter(!is.na(rw)) %>%
+  tbl_df() %>%
+  group_by(date) %>%
+  summarize(
+    Median.RW = median(rw),
+    RW.1stQr  = quantile(rw, 0.25),
+    RW.3rdQr  = quantile(rw, 0.75),
+    RW.9thDc  = quantile(rw, 0.90),
+    RW.1stDc  = quantile(rw, 0.10)
+  )
+
+ggplot(
+  df, 
+  aes(x = date)
+) + 
+  geom_line(aes(y = Median.RW)) + 
+  geom_ribbon(aes(ymin = RW.1stDc, ymax = RW.9thDc), alpha = 0.2)+
+  geom_ribbon(aes(ymin = RW.1stQr, ymax = RW.3rdQr), alpha = 0.4) +
+  ylim(0, 50)
+
+```
+
+
+
+b. Plot monthly median real wages in a line plot, broken down into education level.
+
+```{r, echo = F, message = F, warning= F, fig.height = 2.5}
+df <- org_example %>%
+  mutate(
+    date = paste(year, month, "01", sep = "-"),
+    date = as.Date(date, format = "%Y-%m-%d")
+  ) %>%
+  filter(!is.na(rw)) %>%
+  tbl_df() %>%
+  group_by(date, educ) %>%
+  summarize(
+    Median.RW = median(rw)
+  )
+
+ggplot(
+  df, 
+  aes(x = date, colour = educ, fill = educ)
+) + 
+  geom_line(aes(y = Median.RW))
+
+```
+
+
+
+
+
