@@ -1,0 +1,32 @@
+---
+title: "Econ 294 Final Exam"
+author: "Curtis Kephart"
+date: "Winter 2016"
+output: pdf_document
+---
+
+
+**What to Turn In**
+You will turn in github links to the r-markdown and compiled document (either html or pdf) for your assignment. 
+
+See the various .Rmd assignments files in your instructors assignments folder for tips on getting started. Here is a handy [cheatsheet for working with] R-Markdown(https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf). 
+
+**Data** - Work with the r package `nycflights13`. Build your solutions by querying from the `nycflights13_sqlite()` sqlite database (see lecture 8 notes, and `dplyr`'s two table verb vignette for insight on how to do this). To be clear, this SQLite database must be your starting point, ***you may not load your data from any other source***.
+
+Here is a [detailed explaination of each database table, variable, and source](https://cran.r-project.org/web/packages/nycflights13/nycflights13.pdf).
+
+Explain the relationship between **departure delays and cancelations** with each of the following flight facets:  
+
+a) weather 
+
+b) time of day, day of week, and time of year, and any other aspect of time
+
+c) airport destination 
+
+d) characteristics of the plane
+
+e) significant interactions between these facets 
+
+Use **concise**, clear text to explain nice-looking plots, tables, and models in support your analysis. The text of your paper (not including plots and tables) should exceed two pages.  
+
+At the end of your paper, I expect to have a clear idea of under what conditions I should expect takeoff delays and cancellations at New York City airports in 2013. 
