@@ -1,0 +1,43 @@
+---
+title: "Lecture 10 - Beamer Presentation"
+author: "Curtis Kephart"
+date: "Winter 2016"
+output: 
+  beamer_presentation:
+    colortheme: "dolphin"
+    includes:
+      template: Lec10\CurtisCustomBeamer.tex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo  = FALSE)
+knitr::opts_chunk$set(cashe = T)
+library(ggplot2)
+library(dplyr)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## Slide With a Plot
+
+```{r pressure, echo=F}
+ggplot(
+  data = sample_n(diamonds, 10000) %>% #sample, diamonds is qutie large
+    mutate(volume = x*y*z), 
+  aes(
+    x = volume,
+    y = price,
+    colour = color,
+    size = carat
+  )
+) + 
+  geom_point(alpha = 0.05) +
+  scale_x_log10() +
+  scale_y_log10() +
+  guides(colour = guide_legend(override.aes= list(alpha = 0.9, size = 6)),
+         size   = guide_legend(override.aes= list(alpha = 0.9))) 
+```
