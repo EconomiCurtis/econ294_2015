@@ -20,7 +20,7 @@ For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit...** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r diamonds, message=FALSE}
+```{r package-load, message=FALSE}
 library(dplyr)
 library(ggplot2)
 ```
@@ -29,7 +29,7 @@ library(ggplot2)
 
 You can also embed plots, for example:
 
-```{r pressure, echo=T, fig.height=3.5}
+```{r echo=F, fig.height=3.5}
 ggplot(
   data = sample_n(diamonds, 10000) %>% #sample, diamonds is qutie large
     mutate(volume = x*y*z), 
@@ -121,12 +121,9 @@ Your code chunk is run, and the summary is produced, but the code chunk isn't pr
 
 **Error and Warning Handling** - a lot of your code might produce error or warning messages. One example is with loading certain packages. 
 
-  ```{r}
-  library(dplyr)
-  ```
 
-```{r, echo = F}
-library(dplyr)
+```{r, echo = T}
+warning("warning")
 ```
 
 Note all the warning messages about masked functions. You can turn this off with the warning option. 
@@ -137,8 +134,8 @@ By default you will get all warning and error messages, so to turn them off set 
   library(dplyr)
   ```
 
-```{r, echo = F, warning = F}
-library(dplyr)
+```{r, echo = T, warning = F}
+warning("warning")
 ```
 
 
