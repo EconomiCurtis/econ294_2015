@@ -2,14 +2,14 @@
 title: "R Markdown Documents - Lecture 10"
 author: "Curtis Kephart"
 date: "March 10, 2016"
-output: 
-  pdf_document:
+output:
+  html_document: default
     fig_caption: yes
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(cache=TRUE)
+knitr::opts_chunk$set(cache = TRUE)
 ```
 
 ## R Markdown
@@ -20,7 +20,7 @@ For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit...** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r package-load, message=FALSE}
+```{r package-load, message=T}
 library(dplyr)
 library(ggplot2)
 ```
@@ -29,7 +29,7 @@ library(ggplot2)
 
 You can also embed plots, for example:
 
-```{r echo=F, fig.height=3.5}
+```{r echo=T, fig.height=3.5}
 ggplot(
   data = sample_n(diamonds, 10000) %>% #sample, diamonds is qutie large
     mutate(volume = x*y*z), 
@@ -79,6 +79,12 @@ Returned is the summary table for the vector `diamonds$carat`.
 
 ```{r echo = F, comment = "", highlight = TRUE}
 cat("```{r, eval=TRUE}\n summary(diamonds$price)\n```")
+```
+
+Now, eval = F
+
+```{r, eval = F}
+print("Hello World!")
 ```
 
 ```{r echo = F}
