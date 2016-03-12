@@ -2,7 +2,7 @@
 title: "Econ 294 Final Exam"
 author: "Curtis Kephart"
 date: "Winter 2016"
-output: pdf_document
+output: html_document
 ---
 
 
@@ -11,7 +11,7 @@ You will turn in github links to the r-markdown and compiled document (either ht
 
 See the various .Rmd assignments files in your instructors assignments folder for tips on getting started. Here is a handy [cheatsheet for working with] R-Markdown(https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf). 
 
-**Data** - Work with the r package `nycflights13`. Build your solutions by querying from the `nycflights13_sqlite()` sqlite database (see lecture 8 notes, and `dplyr`'s two table verb vignette for insight on how to do this). To be clear, this SQLite database must be your starting point, ***you may not load your data from any other source***.
+**Data** - Work with the r package `nycflights13`. Build your solutions by querying from the `nycflights13_sqlite()` sqlite database (see lecture 8 notes, `dplyr`'s [two table verb](https://cran.r-project.org/web/packages/dplyr/vignettes/two-table.html) and [databases](https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html) vignette for insight on how to do this). To be clear, this SQLite database must be your starting point, ***you may not load your data from any other source***.
 
 Here is a [detailed explaination of each database table, variable, and source](https://cran.r-project.org/web/packages/nycflights13/nycflights13.pdf).
 
