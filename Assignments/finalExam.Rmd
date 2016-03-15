@@ -16,6 +16,8 @@ Here is a [detailed explaination of each database table, variable, and source](h
 
 Explain the relationship between **departure delays and cancelations** with each of the following flight facets:  
 
+**On Calcelled flights** - Note that all cancelled flights are those with an `NA` for `arr_time` (arrival time) in the `flights` table. 
+
 a) weather 
 
 b) time of day, day of week, and time of year, and any other aspect of time

@@ -72,6 +72,7 @@ img {
 <p><strong>Data</strong> - Work with the r package <code>nycflights13</code>. Build your solutions by querying from the <code>nycflights13_sqlite()</code> sqlite database (see lecture 8 notes, <code>dplyr</code>’s <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/two-table.html">two table verb</a> and <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html">databases</a> vignette for insight on how to do this). To be clear, this SQLite database must be your starting point, <strong><em>you may not load your data from any other source</em></strong>.</p>
 <p>Here is a <a href="https://cran.r-project.org/web/packages/nycflights13/nycflights13.pdf">detailed explaination of each database table, variable, and source</a>.</p>
 <p>Explain the relationship between <strong>departure delays and cancelations</strong> with each of the following flight facets:</p>
+<p><strong>On Calcelled flights</strong> - Note that all cancelled flights are those with an <code>NA</code> for <code>arr_time</code> (arrival time) in the <code>flights</code> table.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>weather</p></li>
 <li><p>time of day, day of week, and time of year, and any other aspect of time</p></li>
