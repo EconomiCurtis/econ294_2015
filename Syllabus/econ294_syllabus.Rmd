@@ -46,7 +46,7 @@ We have ten sessions scheduled. The first three-to-four will focus on basic data
 ### Course Materials Textbooks and Other Resources 
 
 There are no textbooks required for the course. 
-R is an open-source statistical programming language with decades of development by a large number of very good applied satiations.
+R is an open-source statistical programming language with decades of development by a large number of very good applied statisticians.
 
 There are numerous online resources including packages/libraries, help files, topic tutorials, cheatsheets, question and answer forums just an internet search away. 
 
